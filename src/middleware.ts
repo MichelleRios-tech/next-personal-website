@@ -1,17 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { getResponseWithLocaleCookie } from '@/lib/utils/serverSideLocaleUtils';
+import { getResponseWithLocaleCookie, applySetCookie } from '@/lib/utils/serverSideUtils';
 
 export async function middleware(req: NextRequest) {
-  // redirect to /home if the patch is /
   const url = req.nextUrl.clone();
 
   if (url.pathname === '/') {
     url.pathname = '/home';
     return NextResponse.redirect(url, { status: 302 });
   }
+  const response = getResponseWithLocaleCookie(req);
 
-  return getResponseWithLocaleCookie(req);
+  // workaround suggested on https://github.com/vercel/next.js/issues/49442#issuecomment-1679807704
+  // allow cookie() to read the cookies from the response without having to wait for the response to be sent
+  // check issue https://github.com/vercel/next.js/issues/49442
+  applySetCookie(req, response);
+
+  return response;
 }
 
 export const config = {

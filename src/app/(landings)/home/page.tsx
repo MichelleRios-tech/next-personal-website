@@ -1,17 +1,14 @@
 import styles from './page.module.scss'
-import { cookies } from 'next/headers'
+import { createTranslation } from '@/i18n/server';
 
-export default function Home() {
-  const locale = cookies().get('mdl_locale')?.value
+export default async function Home() {
+  const { $t } = await createTranslation('home');
 
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Transforming designs into real life products
+      { $t("Transforming ideas into products.") }
       </h1>
-      <h2>
-        {locale}
-      </h2>
     </main>
   )
 }
