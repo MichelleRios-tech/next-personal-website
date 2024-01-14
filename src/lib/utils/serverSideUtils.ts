@@ -8,7 +8,6 @@ const availableLocales = ['en', 'es'] as const;
 type availableLocales = typeof availableLocales[number];
 
 export const getResponseWithLocaleCookie = (req: NextRequest) => {
-  console.log("getResponseWithLocaleCookie");
   const cookie = req.cookies.get('mdl_locale');
   let response = NextResponse.next();
   if (!cookie) {
@@ -17,7 +16,6 @@ export const getResponseWithLocaleCookie = (req: NextRequest) => {
     response.cookies.set('mdl_locale', locale);
     req.cookies.set('mdl_locale', locale);
   }
-  console.log("response", response.cookies.get('mdl_locale')?.value);
   return response;
 }
 
