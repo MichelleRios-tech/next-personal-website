@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   const locale = getLocale()
   return (
-    <html lang={locale}>
+    <html lang={locale} className='dark'>
       <body className={inter.className}>
         <Header />
         {children}
