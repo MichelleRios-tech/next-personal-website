@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next/initReactI18next';
 import { FALLBACK_LOCALE, getOptions, Locales, LANGUAGE_COOKIE } from './settings';
 import { cookies } from 'next/headers';
 
+// code taken from https://carlogino.com/blog/nextjs-app-dir-i18n-cookie
 async function initI18next(lang: Locales, namespace: string) {
   const i18nInstance = createInstance();
   await i18nInstance
@@ -32,7 +33,6 @@ export async function createTranslation(ns: string) {
 
 // Utility function to get the locale from server components
 export function getLocale() {
-  const cookie = cookies().get(LANGUAGE_COOKIE)?.value ?? FALLBACK_LOCALE;
   return (cookies().get(LANGUAGE_COOKIE)?.value ?? FALLBACK_LOCALE) as Locales;
 }
 
