@@ -1,4 +1,4 @@
-import styles from './page.module.scss'
+import styles from './page.module.css'
 import { createTranslation } from '@/i18n/server';
 
 export default async function Home() {
