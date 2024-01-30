@@ -1,6 +1,6 @@
 .header--container {
   @apply 
-    border-b
+    border-peach-fuzz-200
     flex
     flex-row
     h-16
@@ -9,5 +9,15 @@
     px-4
     py-8
     w-full
+    shadow-nm
+  ;
+}
+
+.logo--container {
+  @apply 
+    flex
+    flex-row
+    items-center
+    gap-2
   ;
 }

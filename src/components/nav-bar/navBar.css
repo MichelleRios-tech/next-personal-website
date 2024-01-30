@@ -1,3 +1,4 @@
+
 .nav-bar--container {
   @apply
     flex
@@ -7,5 +8,14 @@
     justify-between
     px-4
     py-2
+    shadow-nm
+    rounded-3xl
+    bg-chaos-black-nm-convex
+  ;
+}
+
+.nav-bar--link {
+  @apply
+    p-2
   ;
 }

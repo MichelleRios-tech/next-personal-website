@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import { headers } from 'next/headers'
 
 import './navBar.css'
 
@@ -11,18 +11,31 @@ export default function NavBar() {
     '/portfolio',
   ]
 
+  const headers = new Headers();
+
+  // get url
+  const pathname = headers.get('pathname');
+
   function generateLinks() {
     return urlsIndex.map((url) => {
       return (
-        <Link href={url} key={url}>
+        <Link 
+          href={url}
+          key={url}
+          className='nav-bar--link'
+        >
           {url.replace('/', '')}
         </Link>
       );
     });
   }
+
   return (
-    <nav className='nav-bar--container'>
-      {generateLinks()}
-    </nav>
+    <div>
+      <nav className='nav-bar--container'>
+        {generateLinks()}
+      </nav>
+      <p>{pathname}</p>
+    </div>
   )
 }

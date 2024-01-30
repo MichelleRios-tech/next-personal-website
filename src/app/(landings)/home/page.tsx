@@ -1,3 +1,4 @@
+import { HeroBanner } from '@/components/hero-banner/heroBaner';
 import { Button } from '@/components/ui/button';
 import { createTranslation } from '@/i18n/server';
 
@@ -6,10 +7,13 @@ export default async function Home() {
 
   return (
     <main>
+      <HeroBanner />
       <h1>
       { $t("Transforming ideas into products.") }
       </h1>
-      <Button>Button</Button>
+      <Button variant='outline'>
+        { $t("Schedule a meeting") }
+      </Button>
     </main>
   )
 }

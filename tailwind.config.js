@@ -14,6 +14,9 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        nm: '6px 6px 12px #0f0f0f, -6px -6px 12px #313131' 
+      },
       colors: {
         'peach-fuzz': {
           '50': '#FFF4ED',
@@ -40,6 +43,7 @@ module.exports = {
           '800': '#303030',
           '900': '#202020',
           '950': '#101010',
+          'nm-convex': 'linear-gradient(145deg, #222222, #1d1d1d)',
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

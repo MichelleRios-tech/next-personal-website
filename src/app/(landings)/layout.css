@@ -1,0 +1,10 @@
+.landing-layout {
+  @apply
+    flex
+    flex-col
+    items-center
+    justify-items-start
+    w-full
+    h-full
+  ;
+}
