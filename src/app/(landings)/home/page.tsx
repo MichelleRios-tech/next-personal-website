@@ -1,4 +1,4 @@
-import { HeroBanner } from '@/components/hero-banner/heroBaner';
+import { HeroBanner } from '@/components/hero-banner/heroBanner';
 import { Button } from '@/components/ui/button';
 import { createTranslation } from '@/i18n/server';
 

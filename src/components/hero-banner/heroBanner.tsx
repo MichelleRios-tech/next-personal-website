@@ -1,6 +1,7 @@
+import './heroBanner.css'
+
 export function HeroBanner () {
   
-
   return (
     <section className='hero-banner--container'>
       <div className='hero-banner--content'>
@@ -9,7 +10,7 @@ export function HeroBanner () {
       </div>
       <div className='hero-banner--image'>
         <div>
-          placeholder
+          Hero Banner PlaceHolder
         </div>
       </div>
     </section>
